@@ -7,6 +7,18 @@ let birthtMonth = document.querySelector("#BM");
 let birthYear = document.querySelector("#BY");
 let result = document.querySelector(".result")
 let click = document.querySelector("button");
+let color=document.querySelectorAll('h1');
+// setInterval(()=>{
+//   color.forEach((e)=>{
+//     e.style.webkitTextStroke=`2px ${rgb()}`;
+//   });
+// },1000);
+const rgb=()=>{
+  let r=Math.floor(Math.random()*256);
+  let g=Math.floor(Math.random()*256);
+  let b=Math.floor(Math.random()*256);
+  return `rgb(${r},${g},${b})`;
+}
 click.addEventListener('click', () => {
   let A = eval(currentDay.value);
   let B = eval(currentMonth.value);
@@ -23,6 +35,9 @@ click.addEventListener('click', () => {
      birthtMonth.value='';
      birthYear.value='';
   },3000);
+  setTimeout(()=>{
+    result.innerText='';
+  },5000);
   //  AD=ageDate,AM=ageMonth,AY=ageYear
   switch (B) {
     case 1:
