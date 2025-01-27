@@ -1,14 +1,14 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Imprint MT Shadow;
 }
 body{
-    background-color: rgb(74, 148, 105);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: rgb(68, 91, 45);
 }
 .container{
     height:60% ;
@@ -16,13 +16,16 @@ body{
 }
 .mainContainer{
     width: 30vw;
-    border: 2px solid cyan;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 2px 3px 5px rgb(23, 23, 23);
+    background: linear-gradient(60deg,#ff004f,blue);
+    background-size: 300%;
+    animation: change 3s linear infinite;
 }
 h1{
   height: 20%;
@@ -52,6 +55,17 @@ input{
     margin-top: 10px;
     
 }
+.b{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input:hover{
+    transform: scale(1.2);
+    background: rgb(65, 42, 42);
+    box-shadow: 2px 4px 3px rgb(45, 44, 44);
+}
 input::placeholder{
     color: rgb(123, 123, 76);
 }
@@ -62,16 +76,16 @@ input::placeholder{
     margin-top: 10px;
 }
 .button{
-    width: 100%;
-    height: 20%;
+    width: 30%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 button{
     width: 40%;
-    height: 40px;
-    font-size: 30px;
+    height: 35px;
+    font-size: 25px;
     background-color: chartreuse;
     border-radius: 20px;
     color: white;
@@ -85,6 +99,7 @@ p{
     font-size: 30px;
    text-align: center;
 }
+
 @media screen and (max-width: 650px){
     .mainContainer{
         width: 95vw;
@@ -92,4 +107,78 @@ p{
     p{
         font-size: 6vw;
     }
+    h1{
+      font-size:179% ;
+    }
 }
+/* From Uiverse.io by milegelu */ 
+.button {
+    --bezier: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --edge-light: hsla(0, 0%, 50%, 0.8);
+    --text-light: rgba(255, 255, 255, 0.4);
+    --back-color: 240, 40%;
+  
+    cursor: pointer;
+    padding: 0.7em 1em;
+    border-radius: 0.5em;
+    min-height: 2.4em;
+    min-width: 3em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    font-weight: bold;
+  
+    background: linear-gradient(
+      140deg,
+      hsla(var(--back-color), 50%, 1) min(2em, 20%),
+      hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+    );
+    color: hsla(0, 0%, 90%);
+    border: 0;
+    box-shadow: inset 0.4px 1px 4px var(--edge-light);
+  
+    transition: all 0.1s var(--bezier);
+  }
+  
+  .button:hover {
+    --edge-light: hsla(0, 0%, 50%, 1);
+    text-shadow: 0px 0px 10px var(--text-light);
+    box-shadow: inset 0.4px 1px 4px var(--edge-light),
+      2px 4px 8px hsla(0, 0%, 0%, 0.295);
+    transform: scale(1.1);
+  }
+  
+  .button:active {
+    --text-light: rgba(255, 255, 255, 1);
+  
+    background: linear-gradient(
+      140deg,
+      hsla(var(--back-color), 50%, 1) min(2em, 20%),
+      hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+    );
+    box-shadow: inset 0.4px 1px 8px var(--edge-light),
+      0px 0px 8px hsla(var(--back-color), 50%, 0.6);
+    text-shadow: 0px 0px 20px var(--text-light);
+    color: hsla(0, 0%, 100%, 1);
+    letter-spacing: 0.1em;
+    transform: scale(1);
+  }
+  h1{
+    background: linear-gradient(to top,blue,cyan);
+    background-clip: text;
+    color: transparent;
+  }
+  
+/* @keyframes change {
+  0% {
+      background-position: 0% 50%;
+  }
+
+  100% {
+      background-position: 100% 50%;
+  }
+} */
